@@ -9,11 +9,11 @@ bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/conda/
 修改~/.bashrc，在最后一行添加
 <PRE>
 export PATH="/opt/conda/bin:$PATH"
-</PRE>
+</PRE><PRE>
 git clone https://github.com/chineseocr/chineseocr.git
 cd chineseocr/
 git clone https://github.com/pjreddie/darknet.git
-conda create -n chineseocr python=3.6 pip scipy numpy jupyter ipython
+conda create -n chineseocr python=3.6 pip scipy numpy jupyter ipython</PRE>
 <PRE>
 #git submodule init && git submodule update
 pip install easydict opencv-contrib-python==4.0.0.21 Cython h5py lmdb mahotas pandas requests bs4 matplotlib lxml -i https://pypi.tuna.tsinghua.edu.cn/simple/
