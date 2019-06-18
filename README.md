@@ -2,10 +2,10 @@
 基于github项目chineseocr
 
 ## 环境部署
-
+<pre>
 wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/conda/
-
+</pre>
 修改~/.bashrc，在最后一行添加
 export PATH="/opt/conda/bin:$PATH"
 
