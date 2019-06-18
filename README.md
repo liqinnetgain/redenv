@@ -18,12 +18,12 @@ conda create -n chineseocr python=3.6 pip scipy numpy jupyter ipython</PRE>
 #git submodule init && git submodule update
 pip install easydict opencv-contrib-python==4.0.0.21 Cython h5py lmdb mahotas pandas requests bs4 matplotlib lxml -i https://pypi.tuna.tsinghua.edu.cn/simple/
 pip install -U pillow -i https://pypi.tuna.tsinghua.edu.cn/simple/
-#pip install web.py==0.40.dev0
+pip install web.py==0.40.dev0
 pip install keras tensorflow
 pushd text/detector/utils && sh make-for-cpu.sh && popd
 conda install pytorch torchvision -c pytorch
-#apt-get install -y python-qt4
-#pip install opencv-python
+apt-get install -y python-qt4
+pip install opencv-python
 pip install xlrd xlsxwriter
 pip install pyecharts
 </PRE>
@@ -37,7 +37,7 @@ dpkg -i /root/libcudnn7-dev_7.5.0.56-1+cuda10.0_amd64.deb
 </PRE>
 
 修改darknet/python/darknet.py第48行
-lib = CDLL("/root/chineseocr/darknet/libdarknet.so", RTLD_GLOBAL)
+<pre>lib = CDLL("/root/chineseocr/darknet/libdarknet.so", RTLD_GLOBAL)</pre>
 #vim darknet/python/darknet.py
 
 修改darknet/Makefile前2行
