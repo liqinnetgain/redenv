@@ -2,13 +2,15 @@
 ## 基于github项目chineocr
 
 ## 环境部署
-
+1, Install the anaconda on ubuntu
+------------------------------------------------------------------------------------
 wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/conda/
 
 修改~/.bashrc，在最后一行添加
 export PATH="/opt/conda/bin:$PATH"
-
+2, Install the packages
+------------------------------------------------------------------------------------
 git clone https://github.com/chineseocr/chineseocr.git
 cd chineseocr/
 git clone https://github.com/pjreddie/darknet.git
@@ -21,6 +23,9 @@ pip install web.py==0.40.dev0
 pip install keras==2.1.5 tensorflow==1.8
 pushd text/detector/utils && sh make-for-cpu.sh && popd
 conda install pytorch torchvision -c pytorch
+
+3, Install the python packages
+------------------------------------------------------------------------------------
 #apt-get install -y python-qt4
 #pip install opencv-python
 pip install xlrd xlsxwriter
@@ -33,7 +38,6 @@ bash /root/cuda_10.0.130_410.48_linux.run --silent --toolkit
 export PATH="/usr/local/cuda-10.0/bin:$PATH" #~/.bashrc
 dpkg -i /root/libcudnn7_7.5.0.56-1+cuda10.0_amd64.deb
 dpkg -i /root/libcudnn7-dev_7.5.0.56-1+cuda10.0_amd64.deb
-
 
 修改darknet/python/darknet.py第48行
 lib = CDLL("/root/chineseocr/darknet/libdarknet.so", RTLD_GLOBAL)
