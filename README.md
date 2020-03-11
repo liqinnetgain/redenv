@@ -3,6 +3,8 @@
 
 ## 环境部署
 1, Install the anaconda on ubuntu
+sudo -i
+apt-get install -y python-qt4
 ------------------------------------------------------------------------------------
 wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 bash ./Anaconda3-5.2.0-Linux-x86_64.sh -b -p /opt/conda/
@@ -26,14 +28,12 @@ conda install pytorch torchvision -c pytorch
 
 3, Install the python packages
 ------------------------------------------------------------------------------------
-#apt-get install -y python-qt4
-#pip install opencv-python
-pip install xlrd xlsxwriter
-pip install pyecharts
+pip install opencv-python xlrd xlsxwriter pyecharts
 
 
 For GPU:
-pip install tensorflow-gpu==1.8
+------------------------------------------------------------------------------------
+pip install tensorflow-gpu
 bash /root/cuda_10.0.130_410.48_linux.run --silent --toolkit
 export PATH="/usr/local/cuda-10.0/bin:$PATH" #~/.bashrc
 dpkg -i /root/libcudnn7_7.5.0.56-1+cuda10.0_amd64.deb
@@ -53,6 +53,7 @@ pushd darknet/ && make && popd
 
 
 ## 下载模型文件   
+------------------------------------------------------------------------------------
 模型文件地址: [baidu pan](https://pan.baidu.com/s/1gTW9gwJR6hlwTuyB6nCkzQ)
 复制文件夹中的所有文件到models目录
 
